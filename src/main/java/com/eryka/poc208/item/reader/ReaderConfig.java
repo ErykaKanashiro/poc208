@@ -1,6 +1,7 @@
 package com.eryka.poc208.item.reader;
 
 import com.eryka.poc208.domain.Conta;
+import com.eryka.poc208.domain.Documento;
 import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.item.file.MultiResourceItemReader;
 import org.springframework.batch.item.file.ResourceAwareItemReaderItemStream;
@@ -15,9 +16,9 @@ import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 public class ReaderConfig {
 
     @Bean
-    public ItemReader<Conta> xmlItemReader() {
+    public ItemReader<Documento> xmlItemReader() {
 
-        MultiResourceItemReader<Conta> multiReader = new MultiResourceItemReader<>();
+        MultiResourceItemReader<Documento> multiReader = new MultiResourceItemReader<>();
         multiReader.setResources(getXmlFiles());
         multiReader.setDelegate(singleXmlItemReader());
 
@@ -31,10 +32,10 @@ public class ReaderConfig {
         };
     }
 
-    private ResourceAwareItemReaderItemStream<Conta> singleXmlItemReader() {
+    private ResourceAwareItemReaderItemStream<Documento> singleXmlItemReader() {
 
-        StaxEventItemReader<Conta> reader = new StaxEventItemReader<>();
-        reader.setFragmentRootElementName("conta");
+        StaxEventItemReader<Documento> reader = new StaxEventItemReader<>();
+        reader.setFragmentRootElementName("documento");
         reader.setUnmarshaller(contaUnmarshaller());
         return reader;
     }
@@ -42,7 +43,7 @@ public class ReaderConfig {
     @Bean
     public Jaxb2Marshaller contaUnmarshaller() {
         Jaxb2Marshaller unmarshaller = new Jaxb2Marshaller();
-        unmarshaller.setClassesToBeBound(Conta.class); // Classe Java correspondente ao elemento conta
+        unmarshaller.setClassesToBeBound(Documento.class); // Classe Java correspondente ao elemento documento
         return unmarshaller;
     }
 }

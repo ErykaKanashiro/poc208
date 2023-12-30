@@ -1,6 +1,7 @@
 package com.eryka.poc208.config;
 
-import com.eryka.poc208.domain.Conta;
+import com.eryka.poc208.domain.Documento;
+import com.eryka.poc208.item.tasklet.XMLValidationTasklet;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.item.ItemReader;
@@ -16,22 +17,27 @@ public class StepConfig {
     private StepBuilderFactory stepBuilderFactory;
 
     @Autowired
-    private ItemReader<Conta> reader;
-//
-//    @Autowired
-//    private ItemProcessor<Conta, Conta> processor;
-
+    private ItemReader<Documento> reader;
 
     @Autowired
-    private ItemWriter<Conta> writer;
+    private ItemWriter<Documento> writer;
 
     @Bean
     public Step consolidateAccountsStep() {
         return stepBuilderFactory.get("consolidateAccountsStep")
-                .<Conta, Conta>chunk(10)
+                .<Documento, Documento>chunk(2000)
                 .reader(reader)
-               // .processor(processor)
                 .writer(writer)
                 .build();
+    }
+    @Bean
+    public Step xmlValidationStep() {
+        return stepBuilderFactory.get("xmlValidationStep")
+                .tasklet(xmlValidationTasklet())
+                .build();
+    }
+    @Bean
+    public XMLValidationTasklet xmlValidationTasklet() {
+        return new XMLValidationTasklet();
     }
 }

@@ -1,5 +1,6 @@
 package com.eryka.poc208.config;
 
+import com.eryka.poc208.item.listener.XMLValidatorListener;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
@@ -17,10 +18,15 @@ public class JobConfig {
     @Autowired
     private StepConfig stepConfig;
 
+    @Autowired
+    private XMLValidatorListener listener;
+
     @Bean
     public Job consolidateAccountsJob() {
         return jobBuilderFactory.get("consolidateAccountsJob")
                 .start(stepConfig.consolidateAccountsStep())
+//                .next(stepConfig.xmlValidationStep())
+                .listener(listener)
                 .build();
     }
 }
