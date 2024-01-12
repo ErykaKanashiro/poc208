@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 
 public class DocumentoUtil {
 
-    public static String gerarNome(String dataBase){
+    public static String gerarNome(long dataBase){
 
         LocalDateTime agora = LocalDateTime.now();
 

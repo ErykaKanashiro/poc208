@@ -3,12 +3,14 @@ package com.eryka.poc208.domain;
 import lombok.Data;
 
 import javax.xml.bind.annotation.*;
-import java.util.List;
 
 @Data
 @XmlRootElement(name = "documento")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Documento {
+
+    @XmlAttribute(name = "dataBase")
+    private String dataBase;
 
     @XmlAttribute(name = "codigoDocumento")
     private String codigoDocumento;
@@ -16,14 +18,19 @@ public class Documento {
     @XmlAttribute(name = "cnpj")
     private String cnpj;
 
-    @XmlAttribute(name = "dataBase")
-    private String dataBase;
+    @XmlAttribute(name = "tipoEnvio")
+    private String tipoEnvio;
 
-    @XmlAttribute(name = "tipoRemessa")
-    private String tipoRemessa;
+    @XmlElement(name = "instituicoesFinanceiras")
+    private InstituicoesFinanceiras instituicoesFinanceiras;
 
-    @XmlElementWrapper(name = "contas")
-    @XmlElement(name = "conta")
-    private List<Conta> contas;
+    @XmlElement(name = "investidoresInstitucionais")
+    private InvestidoresInstitucionais investidoresInstitucionais;
+
+    @XmlElement(name = "outrasPessoasJuridicas")
+    private OutrasPessoasJuridicas outrasPessoasJuridicas;
+
+    @XmlElement(name = "pessoasFisicas")
+    private PessoasFisicas pessoasFisicas;
 
 }

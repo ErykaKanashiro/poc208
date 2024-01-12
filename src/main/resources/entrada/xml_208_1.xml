@@ -1,9 +1,31 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<documento codigoDocumento="4111" cnpj="12345678" dataBase="2023-06-01" tipoRemessa="I">
-    <contas>
-        <conta codigoConta="12345678" saldoDia="10.00"/>
-        <conta codigoConta="23456789" saldoDia="10.00"/>
-        <conta codigoConta="34567890" saldoDia="10.00"/>
-        <conta codigoConta="98765431" saldoDia="10.00"/>
-    </contas>
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<documento dataBase="02-01-2021" codigoDocumento="5005" cnpj="01111111" tipoEnvio="I">
+    <instituicoesFinanceiras>
+        <valorTotalResgatadoDia pre="0.10" pos="0.10" cdi="0.10" outros="0.10"/>"
+        <valorTotalCaptadoDia pre="0.10" pos="0.10" cdi="0.10" outros="0.10"/>"
+        <saldoFinalDia pre="0.10" pos="0.10" cdi="0.10" outros="0.10"/>"
+        <taxaMediaEmissaoDia pre="0.10" pos="0.10" cdi="0.10" outros="0.10"/>"
+        <rendimentosIncorporados pre="0.10" pos="0.10" cdi="0.10" outros="0.10"/>
+    </instituicoesFinanceiras>
+    <investidoresInstitucionais>
+        <valorTotalResgatadoDia pre="0.10" pos="0.10" cdi="0.10" outros="0.10"/>"
+        <valorTotalCaptadoDia pre="0.10" pos="0.10" cdi="0.10" outros="0.10"/>"
+        <saldoFinalDia pre="0.10" pos="0.10" cdi="0.10" outros="0.10"/>"
+        <taxaMediaEmissaoDia pre="0.10" pos="0.10" cdi="0.10" outros="0.10"/>"
+        <rendimentosIncorporados pre="0.10" pos="0.10" cdi="0.10" outros="0.10"/>
+    </investidoresInstitucionais>
+    <outrasPessoasJuridicas>
+        <valorTotalResgatadoDia pre="0.10" pos="0.10" cdi="0.10" outros="0.10"/>"
+        <valorTotalCaptadoDia pre="0.10" pos="0.10" cdi="0.10" outros="0.10"/>"
+        <saldoFinalDia pre="0.10" pos="0.10" cdi="0.10" outros="0.10"/>"
+        <taxaMediaEmissaoDia pre="0.10" pos="0.10" cdi="0.10" outros="0.10"/>"
+        <rendimentosIncorporados pre="0.10" pos="0.10" cdi="0.10" outros="0.10"/>
+    </outrasPessoasJuridicas>
+    <pessoasFisicas>
+        <valorTotalResgatadoDia pre="0.10" pos="0.10" cdi="0.10" outros="0.10"/>"
+        <valorTotalCaptadoDia pre="0.10" pos="0.10" cdi="0.10" outros="0.10"/>"
+        <saldoFinalDia pre="0.10" pos="0.10" cdi="0.10" outros="0.10"/>"
+        <taxaMediaEmissaoDia pre="0.10" pos="0.10" cdi="0.10" outros="0.10"/>"
+        <rendimentosIncorporados pre="0.10" pos="0.10" cdi="0.10" outros="0.10"/>
+    </pessoasFisicas>
 </documento>
